@@ -1,0 +1,233 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Renk Paleti ve Temel Ayarlar */
+:root {
+    --background-color: #121212;
+    --surface-color: #1E1E1E;
+    --primary-text-color: #EAEAEA;
+    --secondary-text-color: #A0A0A0;
+    --accent-color: #00A8F0;
+    --border-color: #2a2a2a;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header ve Navigasyon */
+header {
+    padding: 1.5rem 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-text-color);
+}
+
+/* Ana Sayfa Hero Alanı */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(18,18,18,1)), url(https://placehold.co/1920x1080/111111/555555?text=AutoHub);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--secondary-text-color);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 168, 240, 0.2);
+}
+
+/* Genel Sayfa Başlıkları */
+.page-header {
+    padding: 8rem 0 3rem 0;
+    text-align: center;
+}
+.page-header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Araç Listesi Kartları */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+.car-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.car-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+.car-card a { color: inherit; }
+.car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.car-card .car-info { padding: 1.5rem; }
+.car-card .car-info h3 { margin: 0 0 0.5rem 0; font-size: 1.25rem; color: var(--primary-text-color); }
+.car-card .car-info p { margin: 0; color: var(--secondary-text-color); }
+.car-card .ai-reason { font-size: 0.9rem; margin-top: 1rem; color: var(--accent-color); font-style: italic; }
+
+/* Araç Detay Sayfası */
+.car-detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 3rem;
+    padding-top: 8rem;
+    align-items: flex-start;
+}
+.car-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.car-details-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.car-details-card .series { color: var(--accent-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.car-details-card h1 { font-size: 2.5rem; margin: 0.5rem 0 1rem 0; }
+.car-details-card .price { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+.car-details-card .description { color: var(--secondary-text-color); line-height: 1.6; margin-bottom: 2.5rem; }
+.actions button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: none;
+    margin-bottom: 1rem;
+}
+.actions .purchase-btn { background-color: var(--accent-color); color: #000; }
+.actions .fav-btn { background-color: transparent; color: var(--primary-text-color); border: 2px solid #333; }
+.actions .fav-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+.sold-out { text-align: center; color: #ff4d4d; font-weight: 600; }
+
+/* AI Asistan Kutusu */
+.ai-assistant-box {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem 0 3rem 0;
+    text-align: center;
+}
+.ai-assistant-box h2 { margin-top: 0; }
+.ai-assistant-box form { display: flex; gap: 1rem; max-width: 700px; margin: 1rem auto 0 auto; }
+.ai-assistant-box input {
+    flex-grow: 1; padding: 0.75rem 1rem; border: 1px solid #333; border-radius: 8px; font-size: 1rem;
+    background-color: var(--background-color); color: var(--primary-text-color);
+}
+.ai-assistant-box button { padding: 0.75rem 1.5rem; border: none; background-color: var(--accent-color); color: #000;
+    border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600;
+}
+
+/* Form Sayfaları (Login/Register) */
+.form-container { padding-top: 8rem; }
+.user-form { max-width: 450px; margin: 2rem auto; padding: 2.5rem; background: var(--surface-color); border-radius: 12px; border: 1px solid var(--border-color); }
+.user-form h1 { text-align: center; margin-bottom: 2rem; }
+.user-form input {
+    width: 100%; padding: 0.8rem 1rem; margin-bottom: 1.5rem; border: 1px solid #333; border-radius: 8px;
+    background-color: var(--background-color); color: var(--primary-text-color); font-size: 1rem; box-sizing: border-box;
+}
+.user-form button {
+    width: 100%; padding: 1rem; border: none; border-radius: 8px; background-color: var(--accent-color);
+    color: #000; font-size: 1rem; font-weight: 600; cursor: pointer;
+}
+.error, .success { padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center; }
+.error { color: #ffcccc; background: #5c1f1f; border: 1px solid #a83c3c; }
+.success { color: #ccffdd; background: #1f5c3b; border: 1px solid #3ca86a; }
+
+/* Footer */
+footer.site-footer { text-align: center; padding: 3rem 0; margin-top: 4rem; background-color: #000; color: var(--secondary-text-color); }
+
