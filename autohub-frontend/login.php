@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Girdilerin boş olup olmadığını kontrol et
     if (empty($email) || empty($password)) {
         $error = "E-posta ve şifre alanları zorunludur.";
     } else {
@@ -34,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         } else {
             // API'den gelen hata mesajını al, yoksa genel bir hata mesajı kullan
-            $error = $response['body']['message'] ?? 'Giriş başarısız. Bilgilerinizi kontrol edip tekrar deneyin.';
+            $error = $response['body']['message'] ?? 'Giriş başarısız. Bilinmeyen bir hata oluştu.';
         }
     }
 }
